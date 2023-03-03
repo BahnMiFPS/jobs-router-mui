@@ -88,7 +88,6 @@ export default function LoginForm({ callback }) {
 						name="email"
 						autoComplete="email"
 						autoFocus
-						value={email}
 						variant="outlined"
 					/>
 					<TextField
@@ -101,7 +100,6 @@ export default function LoginForm({ callback }) {
 						type="password"
 						id="password"
 						autoComplete="current-password"
-						value={password}
 					/>
 					<FormControlLabel
 						control={<Checkbox value="remember" color="primary" />}

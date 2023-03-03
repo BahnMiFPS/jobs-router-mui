@@ -79,7 +79,7 @@ export default function Header() {
 					>
 						Job Routing
 					</Typography>
-					<Search>
+					<Search sx={{ marginRight: 2 }}>
 						<SearchIconWrapper>
 							<SearchIcon />
 						</SearchIconWrapper>
@@ -98,7 +98,7 @@ export default function Header() {
 								Logout
 							</Button>
 							<Avatar sx={{ width: 40, height: 40, ml: 1 }}>
-								<Person />
+								{auth.user.slice(0, 1).toUpperCase()}
 							</Avatar>
 						</>
 					) : (
