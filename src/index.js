@@ -1,48 +1,21 @@
-import React, { useContext } from "react"
+import React from "react"
 import ReactDOM from "react-dom/client"
-import "./index.css"
+import { BrowserRouter } from "react-router-dom"
 import App from "./App"
-import {
-	createBrowserRouter,
-	RouterProvider,
-	useLocation,
-} from "react-router-dom"
-import Login from "./pages/Login"
-import Home from "./pages/Home"
-import Layout from "./pages/Layout"
-import AuthProvider from "./auth/AuthProvider"
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Layout />,
-		children: [
-			{
-				index: true,
-				element: <Home />,
-			},
-			{
-				path: "login",
-				element: <Login />,
-			},
-		],
-	},
-	{
-		path: "*",
-		element: (
-			<main>
-				<p>There's nothing here!</p>
-			</main>
-		),
-	},
-])
+import AuthProvider from "./auth/AuthProvider"
+import ThemeProvider from "./utils/theme"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
 root.render(
 	<React.StrictMode>
-		<AuthProvider>
-			<RouterProvider router={router} />
-		</AuthProvider>
+		<BrowserRouter>
+			<AuthProvider>
+				<ThemeProvider>
+					<App />
+				</ThemeProvider>
+			</AuthProvider>
+		</BrowserRouter>
 	</React.StrictMode>
 )

@@ -18,7 +18,6 @@ function SkillsPaper({ skills }) {
 				p: 0.5,
 				m: 0,
 				boxShadow: 0,
-				backgroundColor: (theme) => theme.palette.primary.dark,
 			}}
 			component="ul"
 		>
@@ -26,9 +25,9 @@ function SkillsPaper({ skills }) {
 				<ListItem key={skill}>
 					<Chip
 						size="small"
-						color="primary"
+						color="secondary"
 						label={skill}
-						sx={{ paddingBottom: "2px", backgroundColor: "#df4747" }}
+						sx={{ paddingBottom: "2px" }}
 					/>
 				</ListItem>
 			))}

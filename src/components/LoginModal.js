@@ -18,7 +18,7 @@ const style = {
 	border: "none",
 }
 
-function LoginModal() {
+function LoginModal({}) {
 	const navigate = useNavigate()
 	const handleClose = () => {
 		navigate(-1)

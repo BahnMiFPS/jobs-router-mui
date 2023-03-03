@@ -4,21 +4,18 @@ import { Outlet } from "react-router-dom"
 import { Box, Stack } from "@mui/material"
 import Header from "../components/Header"
 
-function Home() {
+function Layout() {
 	return (
-		<ThemeProvider>
-			<Stack
-				sx={{
-					minHeight: "100vh",
-					backgroundColor: (theme) => theme.palette.primary.light,
-				}}
-			>
-				<Header />
-				<Outlet />
-				<Box sx={{ flexGrow: 1 }} />
-			</Stack>
-		</ThemeProvider>
+		<Stack
+			sx={{
+				minHeight: "100vh",
+			}}
+		>
+			<Header />
+			<Outlet />
+			<Box sx={{ flexGrow: 1 }} />
+		</Stack>
 	)
 }
 
-export default Home
+export default Layout

@@ -8,8 +8,8 @@ import Typography from "@mui/material/Typography"
 import InputBase from "@mui/material/InputBase"
 import MenuIcon from "@mui/icons-material/Menu"
 import SearchIcon from "@mui/icons-material/Search"
-import { Button } from "@mui/material"
-import { Login, Logout } from "@mui/icons-material"
+import { Avatar, Button } from "@mui/material"
+import { Login, Logout, Person } from "@mui/icons-material"
 import { useNavigate } from "react-router-dom"
 import AuthContext from "../auth/AuthContext"
 
@@ -89,13 +89,18 @@ export default function Header() {
 						/>
 					</Search>
 					{auth?.user ? (
-						<Button
-							variant="contained"
-							startIcon={<Logout />}
-							onClick={handleSignOutClick}
-						>
-							Logout
-						</Button>
+						<>
+							<Button
+								variant="contained"
+								startIcon={<Logout />}
+								onClick={handleSignOutClick}
+							>
+								Logout
+							</Button>
+							<Avatar sx={{ width: 40, height: 40, ml: 1 }}>
+								<Person />
+							</Avatar>
+						</>
 					) : (
 						<Button
 							variant="contained"
