@@ -67,6 +67,10 @@ export default function Header() {
 		})
 	}
 
+	const handleSearchChange = (e) => {
+		console.log(e.target.value)
+	}
+
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="static">
@@ -86,25 +90,37 @@ export default function Header() {
 						<StyledInputBase
 							placeholder="Search…"
 							inputProps={{ "aria-label": "search" }}
+							onChange={handleSearchChange}
 						/>
 					</Search>
 					{auth?.user ? (
 						<>
+							<Typography padding={1}>{auth.user}</Typography>
+							<Avatar
+								sx={{
+									width: 40,
+									height: 40,
+									margin: 1,
+									display: { xs: "none", md: "flex" },
+								}}
+							>
+								{auth.user.slice(0, 1).toUpperCase()}
+							</Avatar>
 							<Button
+								padding="2rem"
 								variant="contained"
-								startIcon={<Logout />}
+								startIcon={
+									<Logout sx={{ display: { xs: "none", md: "flex" } }} />
+								}
 								onClick={handleSignOutClick}
 							>
 								Logout
 							</Button>
-							<Avatar sx={{ width: 40, height: 40, ml: 1 }}>
-								{auth.user.slice(0, 1).toUpperCase()}
-							</Avatar>
 						</>
 					) : (
 						<Button
 							variant="contained"
-							startIcon={<Login />}
+							startIcon={<Login sx={{ display: { xs: "none", md: "flex" } }} />}
 							onClick={handleSignInClick}
 						>
 							Login

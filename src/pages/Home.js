@@ -4,7 +4,7 @@ import JobCard from "../components/JobCard"
 import jobs from "../jobs.json"
 function Home() {
 	return (
-		<Container sx={{ marginTop: 2 }}>
+		<Container sx={{ padding: 5 }}>
 			<Grid container spacing={3}>
 				{jobs.map((job) => (
 					<Grid key={job.id} item lg={3} md={4} sm={6} xs={12}>

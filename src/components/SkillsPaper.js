@@ -18,6 +18,7 @@ function SkillsPaper({ skills }) {
 				p: 0.5,
 				m: 0,
 				boxShadow: 0,
+				background: "none",
 			}}
 			component="ul"
 		>
